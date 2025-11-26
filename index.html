@@ -3,38 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="FlareHabit - A clean, gamified habit tracker with XP, levels, achievements, streaks, and AI-powered habit suggestions.">
-    <meta name="keywords" content="habit tracker, gamified, XP, achievements, streaks, AI suggestions">
-    <title>FlareHabit - Gamified Habit Tracking</title>
+    <meta name="description" content="FlareHabit - A clean, modern habit tracker powered by XP, achievements, streaks, and AI-generated habit suggestions. Level up your life — one habit at a time.">
+    <meta name="keywords" content="habit tracker, gamified, XP, achievements, streaks, AI suggestions, habit tracking app">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://flarehabit.com/">
+    <meta property="og:title" content="FlareHabit - Level up your life, one habit at a time">
+    <meta property="og:description" content="A clean, modern habit tracker powered by XP, achievements, streaks, and AI-generated habit suggestions.">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://flarehabit.com/">
+    <meta property="twitter:title" content="FlareHabit - Level up your life, one habit at a time">
+    <meta property="twitter:description" content="A clean, modern habit tracker powered by XP, achievements, streaks, and AI-generated habit suggestions.">
+    
+    <title>FlareHabit - Level up your life, one habit at a time</title>
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <h1>FlareHabit</h1>
-            <p class="tagline">Level up your life with gamified habit tracking</p>
-            <div class="screenshot-placeholder">
-                App Screenshot
+            <h1>Level up your life — one habit at a time.</h1>
+            <p class="tagline">A clean, modern habit tracker powered by XP, achievements, streaks, and AI-generated habit suggestions.</p>
+            <div class="hero-bullets">
+                <span class="bullet">Build strong habits</span>
+                <span class="bullet">Stay consistent</span>
+                <span class="bullet">Feel rewarded</span>
             </div>
+            <img src="assets/images/main_dashboard.png" alt="FlareHabit Dashboard" class="hero-screenshot">
             
             <!-- Store Buttons -->
             <div class="store-buttons">
-                <a href="#" class="store-btn">
-                    <span class="icon">🍎</span>
-                    <div>
-                        <div>Download on the</div>
-                        <strong>App Store</strong>
-                        <span class="coming-soon">Coming Soon</span>
+                <a href="#" class="store-btn disabled">
+                    <div class="store-btn-wrapper">
+                        <img src="assets/images/appstore_button.png" alt="Coming soon to App Store" class="store-button-img">
+                        <span class="coming-soon-label">Coming Soon</span>
                     </div>
                 </a>
-                <a href="#" class="store-btn">
-                    <span class="icon">▶️</span>
-                    <div>
-                        <div>Get it on</div>
-                        <strong>Google Play</strong>
-                        <span class="coming-soon">Coming Soon</span>
-                    </div>
+                <a href="https://play.google.com/store/apps/details?id=com.flarehabit.app" target="_blank" rel="noopener noreferrer" class="store-btn">
+                    <img src="assets/images/googleplay_button.png" alt="Get it on Google Play" class="store-button-img">
                 </a>
             </div>
         </div>
@@ -43,30 +52,87 @@
     <!-- Features Section -->
     <section class="features">
         <div class="container">
-            <h2>Powerful Features</h2>
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="feature-icon">⭐</div>
-                    <h3>XP & Levels</h3>
-                    <p>Earn experience points for completing habits and level up your progress. Watch yourself grow as you build consistency.</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">🏆</div>
-                    <h3>Achievements</h3>
-                    <p>Unlock meaningful achievements as you reach milestones. Celebrate your wins and stay motivated on your journey.</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">🔥</div>
-                    <h3>Streaks</h3>
-                    <p>Build powerful streaks and maintain momentum. Keep the fire burning with daily consistency tracking.</p>
+                    <h3>Gamified Progress</h3>
+                    <p>Earn XP for completing habits and level up your character.</p>
                 </div>
                 
                 <div class="feature-card">
                     <div class="feature-icon">🤖</div>
-                    <h3>AI Suggestions</h3>
-                    <p>Get personalized habit recommendations powered by AI. Let smart technology guide your self-improvement journey.</p>
+                    <h3>AI Habit Suggestions</h3>
+                    <p>Get personalized habit recommendations based on your goals.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🏆</div>
+                    <h3>Achievements & Streaks</h3>
+                    <p>Stay motivated with unlockable badges and milestone rewards.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Clean Visual Stats</h3>
+                    <p>Track your growth with simple weekly and monthly insights.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Suggestions Section -->
+    <section class="ai-section">
+        <div class="container">
+            <div class="section-content">
+                <div class="section-text">
+                    <h2>Smarter habits with AI guidance</h2>
+                    <p class="section-description">FlareHabit analyzes your goals and suggests habits tailored to your lifestyle — with reasoning, difficulty, and time estimates.</p>
+                    <ul class="section-bullets">
+                        <li>Personalized to your goals</li>
+                        <li>"Why this works" explanations</li>
+                        <li>Quick habit creation</li>
+                        <li>Balanced suggestions (easy / moderate / hard)</li>
+                    </ul>
+                </div>
+                <div class="section-visual">
+                    <img src="assets/images/ai_suggstions.png" alt="AI Habit Suggestions" class="section-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gamification Section -->
+    <section class="gamification-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Turn self-improvement into real progress</h2>
+                <p class="section-description">FlareHabit keeps you motivated with a simple progression system. Complete habits to earn XP, level up, and unlock new habit slots as you grow. Each day of consistency moves you forward.</p>
+                <ul class="section-bullets">
+                    <li>XP rewards for every completed habit</li>
+                    <li>Level progression that unlocks new habit slots</li>
+                    <li>Streak momentum that boosts motivation</li>
+                    <li>Clean visuals to track your improvement</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dashboard Section -->
+    <section class="dashboard-section">
+        <div class="container">
+            <div class="section-content">
+                <div class="section-visual">
+                    <img src="assets/images/dashboard2.png" alt="Daily Dashboard" class="section-image">
+                </div>
+                <div class="section-text">
+                    <h2>Stay consistent with a clean daily dashboard</h2>
+                    <p class="section-description">No clutter. No noise. Just your habits, progress, and a calm interface designed to help you focus.</p>
+                    <ul class="section-bullets">
+                        <li>Visual streak indicators</li>
+                        <li>Quick habit check-ins</li>
+                        <li>Time-of-day tags</li>
+                        <li>Priority/star motivation system</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -75,17 +141,41 @@
     <!-- Gallery Section -->
     <section class="gallery">
         <div class="container">
-            <h2>App Screenshots</h2>
             <div class="gallery-grid">
                 <div class="gallery-item">
-                    Screenshot 1
+                    <img src="assets/images/habit_details.png" alt="Habit Details">
                 </div>
                 <div class="gallery-item">
-                    Screenshot 2
+                    <img src="assets/images/ai_suggstions2.png" alt="AI Suggestions">
                 </div>
                 <div class="gallery-item">
-                    Screenshot 3
+                    <img src="assets/images/achievements.png" alt="Achievements">
                 </div>
+                <div class="gallery-item">
+                    <img src="assets/images/xp_levelup.png" alt="XP Progress">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/weekly_stats.png" alt="Weekly Stats">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download CTA Section -->
+    <section class="download-cta">
+        <div class="container">
+            <h2>FlareHabit is launching soon</h2>
+            <p>Follow for updates and early access.</p>
+            <div class="store-buttons">
+                <a href="#" class="store-btn disabled">
+                    <div class="store-btn-wrapper">
+                        <img src="assets/images/appstore_button.png" alt="Coming soon to App Store" class="store-button-img">
+                        <span class="coming-soon-label">Coming Soon</span>
+                    </div>
+                </a>
+                <a href="https://play.google.com/store/apps/details?id=com.flarehabit.app" target="_blank" rel="noopener noreferrer" class="store-btn">
+                    <img src="assets/images/googleplay_button.png" alt="Get it on Google Play" class="store-button-img">
+                </a>
             </div>
         </div>
     </section>
@@ -93,11 +183,20 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-links">
-                <a href="privacy.html">Privacy Policy</a>
-                <a href="terms.html">Terms of Service</a>
+            <div class="footer-content">
+                <div class="footer-left">
+                    <h3>FlareHabit</h3>
+                    <p>Level up your life — one habit at a time.</p>
+                </div>
+                <div class="footer-right">
+                    <div class="footer-links">
+                        <a href="https://pavelk2254.github.io/flarehabit-docs/Privacy-Policy.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+                        <a href="https://pavelk2254.github.io/flarehabit-docs/Terms-and_conditions.html" target="_blank" rel="noopener noreferrer">Terms of Service</a>
+                    </div>
+                    <p class="footer-contact">Contact: <a href="mailto:pavel4567@gmail.com">pavel4567@gmail.com</a></p>
+                </div>
             </div>
-            <p>&copy; 2024 FlareHabit. All rights reserved.</p>
+            <p class="footer-copyright">&copy; 2024 FlareHabit. All rights reserved.</p>
         </div>
     </footer>
 </body>
