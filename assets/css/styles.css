@@ -199,7 +199,9 @@ body {
 }
 
 .store-btn {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     text-decoration: none;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
@@ -209,7 +211,9 @@ body {
 
 .store-btn-wrapper {
     position: relative;
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .coming-soon-label {
@@ -846,10 +850,32 @@ body {
     .section-content {
         grid-template-columns: 1fr;
         gap: 40px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .dashboard-section .section-content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .dashboard-section .section-text {
+        order: 0;
     }
 
     .dashboard-section .section-visual {
-        order: 0;
+        order: 1;
+        width: 100%;
+        display: block;
+        text-align: center;
+    }
+    
+    .dashboard-section .section-image {
+        width: auto !important;
+        max-width: 100% !important;
+        height: auto !important;
+        display: inline-block;
+        margin: 0 auto;
     }
 
     .section-header h2,
@@ -878,11 +904,19 @@ body {
     .store-buttons {
         flex-direction: column;
         align-items: center;
+        gap: 15px;
     }
 
     .store-btn {
-        width: 100%;
-        max-width: 300px;
+        width: auto;
+        max-width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .store-btn-wrapper {
+        display: flex;
+        justify-content: center;
     }
 
     .email-signup {
