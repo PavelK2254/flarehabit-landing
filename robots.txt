@@ -1,0 +1,11 @@
+# robots.txt for FlareHabit
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://flarehabit.com/sitemap.xml
+
+# Disallow admin or private areas (if any)
+# Disallow: /admin/
+# Disallow: /private/
+

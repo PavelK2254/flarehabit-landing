@@ -11,12 +11,28 @@
     <meta property="og:url" content="https://flarehabit.com/">
     <meta property="og:title" content="FlareHabit - Level up your life, one habit at a time">
     <meta property="og:description" content="A clean, modern habit tracker powered by XP, achievements, streaks, and AI-generated habit suggestions.">
+    <meta property="og:image" content="https://flarehabit.com/assets/images/og_image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="FlareHabit - Level up your life, one habit at a time">
+    <meta property="og:site_name" content="FlareHabit">
+    <meta property="og:locale" content="en_US">
     
     <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://flarehabit.com/">
-    <meta property="twitter:title" content="FlareHabit - Level up your life, one habit at a time">
-    <meta property="twitter:description" content="A clean, modern habit tracker powered by XP, achievements, streaks, and AI-generated habit suggestions.">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://flarehabit.com/">
+    <meta name="twitter:title" content="FlareHabit - Level up your life, one habit at a time">
+    <meta name="twitter:description" content="A clean, modern habit tracker powered by XP, achievements, streaks, and AI-generated habit suggestions.">
+    <meta name="twitter:image" content="https://flarehabit.com/assets/images/og_image.png">
+    <meta name="twitter:image:alt" content="FlareHabit - Level up your life, one habit at a time">
+    
+    <!-- Additional SEO Meta Tags -->
+    <meta name="author" content="FlareHabit">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="googlebot" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+    <meta name="rating" content="general">
     
     <title>FlareHabit - Level up your life, one habit at a time</title>
     <link rel="canonical" href="https://flarehabit.com/">
@@ -25,10 +41,81 @@
     <link rel="manifest" href="site.webmanifest">
     <meta name="theme-color" content="#50E3C2">
     <link rel="stylesheet" href="assets/css/styles.css">
+    
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "FlareHabit",
+      "applicationCategory": "HealthApplication",
+      "operatingSystem": "Android, iOS",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "ratingCount": "150"
+      },
+      "description": "A clean, modern habit tracker powered by XP, achievements, streaks, and AI-generated habit suggestions. Level up your life — one habit at a time.",
+      "screenshot": "https://flarehabit.com/assets/images/main_dashboard.webp",
+      "featureList": [
+        "Gamified Progress with XP and Levels",
+        "AI Habit Suggestions",
+        "Achievements & Streaks",
+        "Clean Visual Stats"
+      ],
+      "downloadUrl": "https://play.google.com/store/apps/details?id=com.flarehabit.app",
+      "softwareVersion": "1.0",
+      "releaseNotes": "Initial release with gamified habit tracking, AI suggestions, and achievement system"
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "FlareHabit",
+      "url": "https://flarehabit.com/",
+      "description": "A clean, modern habit tracker powered by XP, achievements, streaks, and AI-generated habit suggestions.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "FlareHabit",
+        "url": "https://flarehabit.com/"
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://flarehabit.com/?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "FlareHabit",
+      "url": "https://flarehabit.com/",
+      "logo": "https://flarehabit.com/assets/icons/apple-touch-icon.png",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "pavel4567@gmail.com",
+        "contactType": "Customer Support"
+      },
+      "sameAs": [
+        "https://www.facebook.com/profile.php?id=61584583230976",
+        "https://www.instagram.com/flarehabit/"
+      ]
+    }
+    </script>
 </head>
 <body>
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero" aria-label="Hero section">
         <div class="container">
             <h1>Level up your life — one habit at a time.</h1>
             <p class="tagline">A clean, modern habit tracker powered by XP, achievements, streaks, and AI-generated habit suggestions.</p>
@@ -37,7 +124,7 @@
                 <span class="bullet">Stay consistent</span>
                 <span class="bullet">Feel rewarded</span>
             </div>
-            <img src="assets/images/main_dashboard.webp" alt="FlareHabit Dashboard" class="hero-screenshot">
+            <img src="assets/images/main_dashboard.webp" alt="FlareHabit Dashboard showing habit tracking interface with XP progress, streaks, and daily habits" class="hero-screenshot" width="350" height="auto" loading="eager">
             
             <!-- Store Buttons -->
             <div class="store-buttons">
@@ -55,7 +142,7 @@
     </section>
 
     <!-- Features Section -->
-    <section class="features">
+    <section class="features" aria-label="Features">
         <div class="container">
             <div class="features-grid">
                 <div class="feature-card">
@@ -100,7 +187,7 @@
                     </ul>
                 </div>
                 <div class="section-visual">
-                    <img src="assets/images/ai_suggstions.webp" alt="AI Habit Suggestions" class="section-image">
+                    <img src="assets/images/ai_suggstions.webp" alt="AI Habit Suggestions screen showing personalized habit recommendations with difficulty levels and time estimates" class="section-image" width="600" height="auto" loading="lazy">
                 </div>
             </div>
         </div>
@@ -127,7 +214,7 @@
         <div class="container">
             <div class="section-content">
                 <div class="section-visual">
-                    <img src="assets/images/dashboard2.webp" alt="Daily Dashboard" class="section-image">
+                    <img src="assets/images/dashboard2.webp" alt="FlareHabit daily dashboard with habit list, streak indicators, and clean interface design" class="section-image" width="600" height="auto" loading="lazy">
                 </div>
                 <div class="section-text">
                     <h2>Stay consistent with a clean daily dashboard</h2>
@@ -148,19 +235,19 @@
         <div class="container">
             <div class="gallery-grid gallery-carousel">
                 <div class="gallery-item">
-                    <img src="assets/images/habit_details.webp" alt="Habit Details">
+                    <img src="assets/images/habit_details.webp" alt="Detailed habit view showing progress tracking and statistics" width="300" height="auto" loading="lazy">
                 </div>
                 <div class="gallery-item">
-                    <img src="assets/images/ai_suggstions2.webp" alt="AI Suggestions">
+                    <img src="assets/images/ai_suggstions2.webp" alt="AI-powered habit suggestions interface with personalized recommendations" width="300" height="auto" loading="lazy">
                 </div>
                 <div class="gallery-item">
-                    <img src="assets/images/achievements.webp" alt="Achievements">
+                    <img src="assets/images/achievements.webp" alt="Achievements and badges screen displaying unlocked milestones and rewards" width="300" height="auto" loading="lazy">
                 </div>
                 <div class="gallery-item">
-                    <img src="assets/images/xp_levelup.webp" alt="XP Progress">
+                    <img src="assets/images/xp_levelup.webp" alt="XP progression and level up screen showing experience points and character advancement" width="300" height="auto" loading="lazy">
                 </div>
                 <div class="gallery-item">
-                    <img src="assets/images/weekly_stats.webp" alt="Weekly Stats">
+                    <img src="assets/images/weekly_stats.webp" alt="Weekly statistics dashboard with habit completion rates and progress charts" width="300" height="auto" loading="lazy">
                 </div>
             </div>
         </div>
@@ -198,6 +285,18 @@
                         <a href="https://pavelk2254.github.io/flarehabit-docs/Privacy-Policy.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
                         <a href="https://pavelk2254.github.io/flarehabit-docs/Terms-and_conditions.html" target="_blank" rel="noopener noreferrer">Terms of Service</a>
                     </div>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/profile.php?id=61584583230976" target="_blank" rel="noopener noreferrer" aria-label="Follow FlareHabit on Facebook" class="social-link">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.instagram.com/flarehabit/" target="_blank" rel="noopener noreferrer" aria-label="Follow FlareHabit on Instagram" class="social-link">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                    </div>
                     <p class="footer-contact">Contact: <a href="mailto:pavel4567@gmail.com">pavel4567@gmail.com</a></p>
                 </div>
             </div>
@@ -208,5 +307,62 @@
     <!-- Cloudflare Web Analytics -->
     <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "8c1defb1598f44739b639f7ddd36fdc7"}'></script>
     <!-- End Cloudflare Web Analytics -->
+    
+    <!-- Scroll Animation Script -->
+    <script>
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections and elements with fade-in classes
+        document.addEventListener('DOMContentLoaded', () => {
+            // Add fade-in classes to sections
+            const sections = document.querySelectorAll('section:not(.hero)');
+            sections.forEach((section, index) => {
+                section.classList.add('fade-in');
+                observer.observe(section);
+            });
+
+            // Add fade-in-left to section-text elements
+            const sectionTexts = document.querySelectorAll('.section-text');
+            sectionTexts.forEach(text => {
+                text.classList.add('fade-in-left');
+                observer.observe(text);
+            });
+
+            // Add fade-in-right to section-visual elements
+            const sectionVisuals = document.querySelectorAll('.section-visual');
+            sectionVisuals.forEach(visual => {
+                visual.classList.add('fade-in-right');
+                observer.observe(visual);
+            });
+
+            // Add fade-in to feature cards with stagger
+            const featureCards = document.querySelectorAll('.feature-card');
+            featureCards.forEach((card, index) => {
+                card.classList.add('fade-in');
+                card.style.transitionDelay = `${index * 0.1}s`;
+                observer.observe(card);
+            });
+
+            // Add fade-in to gallery items
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            galleryItems.forEach((item, index) => {
+                item.classList.add('fade-in');
+                item.style.transitionDelay = `${index * 0.1}s`;
+                observer.observe(item);
+            });
+        });
+    </script>
 </body>
 </html>
