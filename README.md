@@ -1,6 +1,6 @@
 # FlareHabit Landing Page
 
-Official website for FlareHabit — a clean, gamified habit tracker with XP, levels, achievements, streaks, and AI-powered habit suggestions. This repo hosts the static landing page deployed via Netlify, showcasing app features, screenshots, and links to download, support, and legal pages.
+Official website for FlareHabit — a habit tracker built around Goals & Stages, a daily focus dashboard, achievements, streaks, and optional AI-assisted suggestions. This repo hosts the static landing page deployed via Netlify, showcasing app features, screenshots, and links to download, support, and legal pages.
 
 ## Local Development
 
@@ -51,7 +51,7 @@ flarehabit-landing/
 - Hero section with app preview
 - Feature highlights
 - AI Suggestions showcase
-- Gamification section
+- Goals & Stages / progress section
 - Dashboard preview
 - Screenshot gallery
 - Email signup (Netlify Forms compatible)
