@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script>
+        /* Progressive enhancement: hidden “reveal” states only when IntersectionObserver exists */
+        if (typeof IntersectionObserver !== 'undefined') {
+            document.documentElement.classList.add('reveal-enhanced');
+        }
+        /* Headless / QA: hash #qa-screenshots forces final state for full-page captures */
+        if (window.location.hash === '#qa-screenshots') {
+            document.documentElement.classList.add('qa-screenshots');
+        }
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Pick a goal. Follow clear stages. Know what to do today. FlareHabit builds habits around a real goal — without XP, levels, or RPG noise.">
@@ -314,22 +324,26 @@
     <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "8c1defb1598f44739b639f7ddd36fdc7"}'></script>
     <!-- End Cloudflare Web Analytics -->
     
-    <!-- Scroll Animation Script -->
+    <!-- Scroll Animation Script — enhancement only: no-op if IntersectionObserver unavailable -->
     <script>
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
         document.addEventListener('DOMContentLoaded', () => {
+            if (typeof IntersectionObserver === 'undefined') {
+                return;
+            }
+
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -100px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+
             const sections = document.querySelectorAll('section:not(.hero)');
             sections.forEach((section) => {
                 section.classList.add('fade-in');
