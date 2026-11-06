@@ -2,10 +2,6 @@
 <html lang="en">
 <head>
     <script>
-        /* Progressive enhancement: hidden “reveal” states only when IntersectionObserver exists */
-        if (typeof IntersectionObserver !== 'undefined') {
-            document.documentElement.classList.add('reveal-enhanced');
-        }
         /* Headless / QA: hash #qa-screenshots forces final state for full-page captures */
         if (window.location.hash === '#qa-screenshots') {
             document.documentElement.classList.add('qa-screenshots');
@@ -323,7 +319,17 @@
     <!-- Cloudflare Web Analytics -->
     <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "8c1defb1598f44739b639f7ddd36fdc7"}'></script>
     <!-- End Cloudflare Web Analytics -->
-    
+
+    <!-- reveal-enhanced before paint when supported (avoids visible flash before DOMContentLoaded) -->
+    <script>
+        (function () {
+            if (window.location.hash === '#qa-screenshots') return;
+            if (typeof IntersectionObserver !== 'undefined') {
+                document.documentElement.classList.add('reveal-enhanced');
+            }
+        })();
+    </script>
+
     <!-- Scroll Animation Script — enhancement only: no-op if IntersectionObserver unavailable -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
