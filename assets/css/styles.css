@@ -382,7 +382,7 @@ html.qa-screenshots .hero-screenshot {
     display: flex;
     gap: 24px;
     justify-content: center;
-    align-items: flex-start; /* keep Play + App Store badges on the same top line */
+    align-items: flex-start;
     margin-top: 50px;
     flex-wrap: wrap;
 }
@@ -403,11 +403,6 @@ html.qa-screenshots .hero-screenshot {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-}
-
-.coming-soon-label {
-    /* Deprecated overlay pill — hidden; caption lives under the badge instead */
-    display: none !important;
 }
 
 .store-button-img {
@@ -1415,47 +1410,6 @@ html.qa-screenshots .hero-screenshot {
     text-align: left;
 }
 
-/* iOS coming soon — muted badge; caption below without shifting badge alignment */
-.store-btn.coming-soon-info {
-    display: inline-flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 0;
-    opacity: 1;
-    cursor: default;
-    pointer-events: none;
-    overflow: visible;
-    /* Reserve caption space so sibling Play badge can top-align cleanly */
-    padding-bottom: 1.75rem;
-}
-
-.store-btn.coming-soon-info .store-button-img {
-    filter: grayscale(100%) opacity(0.55);
-    height: 56px;
-    width: auto;
-    display: block;
-    flex-shrink: 0;
-}
-
-.store-btn.coming-soon-info .coming-soon-text {
-    position: absolute;
-    top: calc(56px + 8px); /* directly under the 56px badge */
-    left: 50%;
-    transform: translateX(-50%);
-    display: block;
-    font-size: 0.9rem;
-    font-weight: 700;
-    letter-spacing: 0.02em;
-    color: var(--text-medium);
-    background: none;
-    padding: 0;
-    box-shadow: none;
-    white-space: nowrap;
-    line-height: 1.2;
-}
-
-
 .feature-card p {
     color: var(--text-medium);
 }
@@ -1693,3 +1647,312 @@ html.qa-screenshots .hero-screenshot {
         gap: 15px;
     }
 }
+
+/* =====================================================================
+   P0 2026-11 (DRAFT) — additions/overrides for the 1.15.34 story page.
+   Everything below is new; nothing above this line was changed.
+   ===================================================================== */
+:root {
+    --brand-teal: #005e53;      /* app/store teal; 7.6:1 on white */
+    --brand-mint: #eaf6f3;      /* v5 store frame mint */
+    --text-muted: #4a4a4a;      /* 8.9:1 on white */
+}
+
+/* Slim header */
+.site-header {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0,94,83,0.08);
+}
+.site-header .container { display: flex; align-items: center; justify-content: space-between; min-height: 64px; gap: 12px; }
+.brand { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; color: var(--text-dark); font-weight: 800; font-size: 1.15rem; letter-spacing: -0.3px; min-height: 44px; }
+.brand img { width: 36px; height: 36px; border-radius: 50%; }
+.header-cta {
+    display: inline-flex; align-items: center; justify-content: center;
+    min-height: 44px; padding: 0 18px; border-radius: 999px;
+    background: var(--brand-teal); color: #fff; text-decoration: none; font-weight: 700; font-size: 0.95rem;
+    white-space: nowrap;
+}
+.header-cta:hover { background: #00473f; }
+.header-cta:focus-visible, .store-btn:focus-visible, .brand:focus-visible, .footer a:focus-visible { outline: 3px solid var(--brand-teal); outline-offset: 3px; }
+
+/* Hero: two columns on desktop, CTA above the phones on mobile */
+.hero.hero-p0 { min-height: 0; padding: 72px 20px 88px; text-align: left; }
+.hero-p0 .hero-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: clamp(32px, 5vw, 72px); align-items: center; max-width: 1200px; margin: 0 auto; }
+.eyebrow { display: inline-block; font-weight: 700; font-size: 0.95rem; letter-spacing: 0.2px; color: var(--brand-teal); background: var(--brand-mint); border-radius: 999px; padding: 6px 14px; margin-bottom: 20px; }
+.hero-p0 h1 { font-size: clamp(2.2rem, 4.6vw, 3.9rem); letter-spacing: -1.5px; margin-bottom: 22px; }
+.hero-p0 .tagline { margin: 0 0 28px; max-width: 560px; font-size: clamp(1.1rem, 1.7vw, 1.35rem); color: var(--text-muted); }
+.goal-chips { display: flex; flex-wrap: wrap; gap: 10px; margin: 0 0 32px; padding: 0; list-style: none; }
+.goal-chips li { font-weight: 600; font-size: 0.95rem; color: var(--brand-teal); background: #fff; border: 1.5px solid rgba(0,94,83,0.22); border-radius: 999px; padding: 8px 14px; }
+.hero-p0 .store-buttons { justify-content: flex-start; margin-top: 0; }
+.store-note { margin-top: 12px; font-size: 0.95rem; color: var(--text-muted); }
+.hero-p0 .store-note { text-align: left; }
+.download-cta .store-note { text-align: center; }
+
+/* Real-screen phone frames */
+.phone { position: relative; background: #f8f5fc; border: 8px solid #16181b; border-radius: 34px; overflow: hidden; box-shadow: 0 24px 60px rgba(0, 60, 52, 0.18); }
+.phone img { display: block; width: 100%; height: auto; }
+.phone-pair { position: relative; max-width: 520px; margin: 0 auto; height: clamp(420px, 46vw, 600px); }
+.phone-pair .phone { position: absolute; width: 58%; }
+.phone-pair .phone.back { left: 0; top: 0; }
+.phone-pair .phone.front { right: 0; top: 14%; }
+
+/* Need band */
+.need-band { padding: 72px 0; background: var(--brand-mint); }
+.need-band .container { max-width: 900px; text-align: center; }
+.need-band blockquote { font-size: clamp(1.5rem, 3vw, 2.2rem); font-weight: 800; letter-spacing: -0.6px; line-height: 1.3; color: var(--text-dark); }
+.need-band p { margin-top: 16px; font-size: clamp(1rem, 1.5vw, 1.2rem); color: var(--text-muted); }
+
+/* How it works: alternating steps */
+.how { padding: 104px 0 40px; }
+.how .section-header { margin-bottom: 56px; }
+.story-step { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 6vw, 88px); align-items: center; max-width: 1080px; margin: 0 auto 104px; }
+.story-step:nth-of-type(even) .step-visual { order: 2; }
+.step-visual { display: flex; justify-content: center; }
+.step-visual .phone { width: min(320px, 78vw); }
+.step-visual .phone-pair { width: 100%; }
+.step-num { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; background: var(--brand-teal); color: #fff; font-weight: 800; margin-bottom: 16px; }
+.step-label { display: block; font-weight: 700; font-size: 0.9rem; letter-spacing: 1.2px; text-transform: uppercase; color: var(--brand-teal); margin-bottom: 8px; }
+.story-step h3 { font-size: clamp(1.7rem, 3.2vw, 2.4rem); font-weight: 900; letter-spacing: -0.8px; line-height: 1.2; margin-bottom: 16px; }
+.story-step p { font-size: clamp(1rem, 1.4vw, 1.15rem); color: var(--text-muted); line-height: 1.75; max-width: 480px; }
+.story-step .section-bullets { margin-top: 12px; }
+.story-step .section-bullets li { font-size: 1.02rem; padding: 8px 0 8px 32px; }
+.story-step .section-bullets li::before { color: var(--brand-teal); font-size: 1.15rem; }
+.story-step .section-bullets li:hover { padding-left: 32px; transform: none; color: var(--text-dark); }
+
+/* Any goal strip */
+.any-goal { padding: 96px 0; background: linear-gradient(180deg, #fff 0%, var(--brand-mint) 100%); }
+.goal-strip { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(16px, 3vw, 40px); max-width: 1000px; margin: 0 auto; }
+.goal-strip figure { margin: 0; }
+.goal-strip figcaption { text-align: center; margin-top: 14px; font-weight: 700; color: var(--text-dark); }
+
+/* Principles (reuses .feature-card) */
+.features.principles { padding: 96px 0; }
+.principles .feature-card { padding: 40px 28px; filter: none; box-shadow: var(--shadow-sm); }
+.principles .feature-card h3 { font-size: 1.35rem; }
+.principles .feature-card p { color: var(--text-muted); font-size: 1rem; }
+
+/* CTA */
+.download-cta .store-buttons { justify-content: center; }
+
+/* Footer readability + tap targets */
+.footer-links a, .footer-contact a { display: inline-flex; align-items: center; min-height: 44px; }
+.social-link { min-width: 44px; min-height: 44px; }
+
+/* Responsive */
+@media (max-width: 900px) {
+    .hero.hero-p0 { padding: 40px 0 64px; text-align: left; }
+    .hero-p0 .hero-grid { grid-template-columns: 1fr; }
+    .phone-pair { max-width: 420px; height: clamp(380px, 112vw, 520px); }
+    .story-step { grid-template-columns: 1fr; gap: 28px; margin-bottom: 72px; }
+    .story-step:nth-of-type(even) .step-visual { order: 0; }
+    .story-step .step-text { order: -1; }
+    .how { padding: 72px 0 8px; }
+    .goal-strip { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+    .goal-strip .phone { border-width: 5px; border-radius: 20px; }
+    .goal-strip figcaption { font-size: 0.85rem; }
+}
+@media (max-width: 480px) {
+    .header-cta { padding: 0 14px; font-size: 0.88rem; }
+    .brand span { font-size: 1.05rem; }
+    .hero-p0 h1 { font-size: 2.1rem; letter-spacing: -1px; }
+    .eyebrow { font-size: 0.85rem; }
+    .goal-chips li { font-size: 0.88rem; padding: 7px 12px; }
+    .phone { border-width: 6px; border-radius: 26px; }
+    .any-goal, .features.principles, .need-band { padding: 64px 0; }
+    .store-button-img { height: 52px; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .hero::before, .hero::after { animation: none; }
+}
+
+/* P0 r2 fixes after self-QA */
+.hero-p0 .store-buttons { align-items: flex-start; }
+.how .phone-pair .phone.front { top: 30%; }
+.goal-strip { align-items: center; }
+.goal-strip figcaption { margin: 0 0 12px; }
+@media (max-width: 900px) {
+    .goal-strip {
+        display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 16px;
+        padding: 4px 4px 20px; margin: 0 calc(-1 * clamp(24px, 4vw, 48px)); padding-left: clamp(24px, 4vw, 48px); padding-right: clamp(24px, 4vw, 48px);
+        -webkit-overflow-scrolling: touch; align-items: flex-start;
+    }
+    .goal-strip figure { flex: 0 0 66%; scroll-snap-align: center; }
+    .goal-strip .phone { border-width: 6px; border-radius: 26px; }
+    .goal-strip figcaption { font-size: 1rem; }
+    .swipe-hint { display: block; }
+    .principles .feature-card { padding: 28px 22px; }
+    .principles .feature-icon { font-size: 2.2rem; margin-bottom: 8px; }
+}
+.swipe-hint { display: none; text-align: center; font-size: 0.9rem; color: var(--text-muted); margin-top: 4px; }
+
+/* ===== r3 LookHog visual review (2026-11-12) ===== */
+/* 5) Brand tokens: app teal replaces the old #50E3C2 mint */
+:root {
+    --accent-color: #00796B;
+    --accent-hover: #005e53;
+    --accent-light: rgba(0, 121, 107, .08);
+    --accent-glow: rgba(0, 121, 107, .16);
+    --shadow-xl: 0 20px 60px rgba(0, 94, 83, .14);
+    --shadow-glow: 0 0 0 rgba(0, 0, 0, 0);
+}
+/* auto-generated: hardcoded mint (#50E3C2 / rgb(80,227,194) / #3dd1b0) -> teal */
+body::before { background:
+        radial-gradient(circle at 15% 25%, rgba(0, 121, 107, 0.02) 0%, transparent 45%),
+        radial-gradient(circle at 85% 75%, rgba(0, 121, 107, 0.015) 0%, transparent 45%); }
+.hero { background: linear-gradient(180deg,
+        rgba(0, 121, 107, 0.03) 0%,
+        rgba(0, 121, 107, 0.01) 30%,
+        rgba(255, 255, 255, 1) 70%); }
+.hero::before { background: radial-gradient(circle at 30% 30%, rgba(0, 121, 107, 0.06) 0%, transparent 50%); }
+.hero::after { background: radial-gradient(circle, rgba(0, 121, 107, 0.04) 0%, transparent 70%); }
+.hero-bullets .bullet { background: linear-gradient(135deg, rgba(0, 121, 107, 0.05) 0%, rgba(0, 121, 107, 0.025) 100%); border: 1px solid rgba(0, 121, 107, 0.1); }
+.hero-bullets .bullet:hover { background: linear-gradient(135deg, rgba(0, 121, 107, 0.09) 0%, rgba(0, 121, 107, 0.05) 100%); border-color: rgba(0, 121, 107, 0.2); }
+.hero .screenshot-placeholder { border: 2px solid rgba(0, 121, 107, 0.1); }
+.hero-screenshot { border: 4px solid rgba(0, 121, 107, 0.125); }
+.hero-screenshot::before { background: linear-gradient(135deg, rgba(0, 121, 107, 0.15), rgba(0, 121, 107, 0.05)); }
+.hero-screenshot:hover { border-color: rgba(0, 121, 107, 0.2); }
+.store-btn:hover:not(.disabled) .store-button-img { filter: drop-shadow(0 12px 28px rgba(0, 121, 107, 0.25)); }
+.features::before { background: linear-gradient(90deg,
+        transparent 0%,
+        rgba(0, 121, 107, 0.1) 20%,
+        rgba(0, 121, 107, 0.25) 50%,
+        rgba(0, 121, 107, 0.1) 80%,
+        transparent 100%); }
+.features::after { background: radial-gradient(circle, rgba(0, 121, 107, 0.03) 0%, transparent 70%); }
+.feature-card { border: 1.5px solid rgba(0, 121, 107, 0.075); }
+.feature-card::after { background: linear-gradient(135deg, rgba(0, 121, 107, 0.025) 0%, transparent 100%); }
+.feature-card:hover { box-shadow: var(--shadow-xl), 0 0 40px rgba(0, 121, 107, 0.075); border-color: rgba(0, 121, 107, 0.2); }
+.feature-icon { filter: drop-shadow(0 4px 12px rgba(0, 121, 107, 0.1)); }
+.feature-card:hover .feature-icon { filter: drop-shadow(0 8px 20px rgba(0, 121, 107, 0.2)); }
+.section-bullets li::before { filter: drop-shadow(0 2px 4px rgba(0, 121, 107, 0.15)); }
+.section-bullets li:hover::before { filter: drop-shadow(0 4px 8px rgba(0, 121, 107, 0.25)); }
+.visual-placeholder { border: 2px solid rgba(0, 121, 107, 0.05); }
+.section-image { box-shadow: var(--shadow-lg), 0 0 0 1px rgba(0, 121, 107, 0.05); border: 2px solid rgba(0, 121, 107, 0.1); }
+.section-image::before { background: linear-gradient(135deg, rgba(0, 121, 107, 0.1), rgba(0, 121, 107, 0.025)); }
+.section-image:hover { box-shadow: var(--shadow-xl), 0 0 30px rgba(0, 121, 107, 0.15); border-color: rgba(0, 121, 107, 0.2); }
+.ai-section { background: linear-gradient(135deg, rgba(0, 121, 107, 0.02) 0%, rgba(0, 121, 107, 0.005) 50%, var(--bg-light) 100%); }
+.ai-section::before { background: linear-gradient(90deg,
+        transparent 0%,
+        rgba(0, 121, 107, 0.1) 20%,
+        rgba(0, 121, 107, 0.25) 50%,
+        rgba(0, 121, 107, 0.1) 80%,
+        transparent 100%); }
+.ai-section::after { background: radial-gradient(circle, rgba(0, 121, 107, 0.025) 0%, transparent 70%); }
+.gamification-section::before { background: linear-gradient(90deg,
+        transparent 0%,
+        rgba(0, 121, 107, 0.1) 20%,
+        rgba(0, 121, 107, 0.25) 50%,
+        rgba(0, 121, 107, 0.1) 80%,
+        transparent 100%); }
+.gamification-section::after { background: radial-gradient(circle, rgba(0, 121, 107, 0.02) 0%, transparent 70%); }
+.highlight { background: rgba(0, 121, 107, 0.05); border: 1px solid rgba(0, 121, 107, 0.15); }
+.dashboard-section { background: linear-gradient(135deg, rgba(0, 121, 107, 0.02) 0%, rgba(0, 121, 107, 0.005) 50%, var(--bg-light) 100%); }
+.dashboard-section::before { background: linear-gradient(90deg,
+        transparent 0%,
+        rgba(0, 121, 107, 0.1) 20%,
+        rgba(0, 121, 107, 0.25) 50%,
+        rgba(0, 121, 107, 0.1) 80%,
+        transparent 100%); }
+.section-visual::before { background: radial-gradient(circle, rgba(0, 121, 107, 0.04) 0%, transparent 70%); }
+.gallery::before { background: linear-gradient(90deg,
+        transparent 0%,
+        rgba(0, 121, 107, 0.1) 20%,
+        rgba(0, 121, 107, 0.25) 50%,
+        rgba(0, 121, 107, 0.1) 80%,
+        transparent 100%); }
+.gallery::after { background: radial-gradient(circle, rgba(0, 121, 107, 0.02) 0%, transparent 70%); }
+.gallery-item { border: 2px solid rgba(0, 121, 107, 0.075); }
+.gallery-item::before { background: linear-gradient(135deg, rgba(0, 121, 107, 0.075) 0%, transparent 100%); }
+.gallery-item::after { background: linear-gradient(135deg, rgba(0, 121, 107, 0.15), rgba(0, 121, 107, 0.05)); }
+.gallery-item:hover { box-shadow: var(--shadow-xl), 0 0 40px rgba(0, 121, 107, 0.125); border-color: rgba(0, 121, 107, 0.2); }
+.download-cta { background: linear-gradient(135deg, rgba(0, 121, 107, 0.05) 0%, rgba(0, 121, 107, 0.03) 50%, rgba(0, 121, 107, 0.04) 100%); }
+.download-cta::after { background: linear-gradient(90deg,
+        transparent 0%,
+        rgba(0, 121, 107, 0.1) 20%,
+        rgba(0, 121, 107, 0.25) 50%,
+        rgba(0, 121, 107, 0.1) 80%,
+        transparent 100%); }
+.download-cta::before { background: radial-gradient(circle, rgba(0, 121, 107, 0.06) 0%, transparent 70%); }
+.download-cta::after { background: radial-gradient(circle, rgba(0, 121, 107, 0.04) 0%, transparent 70%); }
+.email-signup button { box-shadow: 0 6px 20px rgba(0, 121, 107, 0.175), 0 0 0 1px rgba(0, 121, 107, 0.05); }
+.email-signup button:hover { box-shadow: 0 12px 32px rgba(0, 121, 107, 0.25), 0 0 0 1px rgba(0, 121, 107, 0.1); }
+.footer::before { background: linear-gradient(90deg,
+        transparent 0%,
+        rgba(0, 121, 107, 0.1) 20%,
+        rgba(0, 121, 107, 0.25) 50%,
+        rgba(0, 121, 107, 0.1) 80%,
+        transparent 100%); }
+.footer::after { background: radial-gradient(circle, rgba(0, 121, 107, 0.025) 0%, transparent 70%); }
+.social-link:hover { background: rgba(0, 121, 107, 0.1); border-color: rgba(0, 121, 107, 0.2); box-shadow: 0 8px 20px rgba(0, 121, 107, 0.15); }
+.progress-section::before { background: linear-gradient(90deg,
+        transparent 0%,
+        rgba(0, 121, 107, 0.1) 20%,
+        rgba(0, 121, 107, 0.25) 50%,
+        rgba(0, 121, 107, 0.1) 80%,
+        transparent 100%); }
+.example-card { border: 1.5px solid rgba(0, 121, 107, 0.1); }
+@media (max-width: 768px) { .gallery-grid.gallery-carousel { scrollbar-color: rgba(0, 121, 107, 0.25) transparent; } }
+@media (max-width: 768px) { .gallery-grid.gallery-carousel::-webkit-scrollbar-thumb { background: rgba(0, 121, 107, 0.25); } }
+@media (max-width: 768px) { .gallery-grid.gallery-carousel::-webkit-scrollbar-thumb:hover { background: rgba(0, 121, 107, 0.35); } }
+.footer-contact a { color: #9fdccf; }
+.footer-contact a:hover { color: #ffffff; }
+
+/* 1) Hero phone overlap */
+.hero-p0 .phone-pair .phone { width: 54%; }
+.hero-p0 .phone-pair .phone.front { right: -4%; top: 20%; }
+
+/* 2) Step 1 pair: question + typed goal stay readable */
+.how .phone-pair .phone.front { top: 46%; }
+.how .phone-pair { height: clamp(560px, 58vw, 700px); }
+
+/* 3) Any goal strip: equal phones, tops and captions aligned */
+.goal-strip { align-items: start; }
+.goal-strip .phone img { aspect-ratio: 720 / 1020; object-fit: cover; object-position: top; }
+
+/* 6) Principle icons: inline SVG line icons in a mint circle */
+.principles .feature-icon { width: 56px; height: 56px; border-radius: 50%; background: #eaf6f3; display: grid; place-items: center; margin: 0 auto 16px; font-size: 0; }
+.principles .feature-icon svg { width: 28px; height: 28px; display: block; }
+.principles .feature-card:hover .feature-icon { transform: none; }
+
+/* 7) Any goal band: fade the bottom 80px back to white; centre every step */
+.any-goal { background: linear-gradient(180deg, #ffffff 0, #eaf6f3 160px, #eaf6f3 calc(100% - 80px), #ffffff 100%); }
+.story-step { align-items: center; }
+
+/* 4) Swipe hint above the strip (shown only where the strip scrolls) */
+.swipe-hint { margin: -8px 0 16px; font-size: .85rem; }
+
+@media (max-width: 900px) {
+    .hero-p0 .phone-pair .phone.front { right: 0; }
+    .how .phone-pair { height: clamp(560px, 150vw, 680px); }
+    .any-goal .section-header { margin-bottom: 24px; }
+    .goal-strip { align-items: flex-start; padding-bottom: 32px; scroll-padding-inline: clamp(24px, 4vw, 48px); }
+    .goal-strip figure { flex: 0 0 72%; }
+    .swipe-hint { display: block; }
+    .principles .feature-icon { font-size: 0; margin: 0 auto 16px; }
+}
+@media (max-width: 480px) {
+    .hero-p0 .phone-pair { overflow: visible; }
+    .hero-p0 .hero-visual { overflow-x: clip; }
+}
+/* r3 QA follow-ups (measured, see preview-shots/p0-accept.json) */
+.how .phone-pair .phone { width: 58%; }           /* beat .step-visual .phone so the pair doesn't stack two full-width phones */
+@media (max-width: 900px) {
+    .hero-p0 .phone-pair { height: clamp(420px, 140vw, 620px); }
+    .hero-p0 .phone-pair .phone.front { top: 28%; } /* front starts below the back phone's CURRENT badge */
+}
+@media (max-width: 900px) {
+    .how .phone-pair .phone { width: 72%; }       /* larger screens on mobile; the front phone sits below the typed goal */
+}
+/* Teal on the dark footer is 3.72:1, so footer hovers use the light mint (12.8:1) instead */
+.footer-links a:hover, .social-link:hover { color: #9fdccf; }
+
+/* ===== r3b LookHog nits (2026-11-12) ===== */
+/* a) Mobile hero: trim the empty band under the front phone (shadow now ends ~24px above the hero's bottom edge) */
+@media (max-width: 900px) {
+    .hero-p0 .phone-pair { height: clamp(400px, 136vw, 600px); }
+}
+/* b) The 1px hairline at the Any goal → principles seam was the inherited .features::before divider
+      (1px horizontal gradient, teal after r3). The band now fades to white, so the divider is removed here. */
+.features.principles::before { content: none; display: none; }

@@ -1,0 +1,5 @@
+# DRAFT — Netlify redirects. Stale 2024 legal copies on flarehabit.com -> canonical legal docs (effective 2026-10-21).
+/privacy.html   https://pavelk2254.github.io/flarehabit-docs/Privacy-Policy.html        301
+/privacy        https://pavelk2254.github.io/flarehabit-docs/Privacy-Policy.html        301
+/terms.html     https://pavelk2254.github.io/flarehabit-docs/Terms-and_conditions.html  301
+/terms          https://pavelk2254.github.io/flarehabit-docs/Terms-and_conditions.html  301
