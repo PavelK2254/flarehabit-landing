@@ -1,0 +1,27 @@
+# FlareHabit
+
+> FlareHabit is a goal planner for Android. You type any goal in plain words, the app splits it into stages, and the dashboard shows what's due today. It is made by Pavel Koyfman, an individual developer in Riga, Latvia. Official site: https://flarehabit.com
+
+FlareHabit is a goal planner, not a habit tracker. There is no XP and no levels. Progress is measured by your goal and its stages, not points. You work on one Goal at a time. If you start a new goal while another is still active, the current goal is abandoned. You can start a new goal once you are ready.
+
+Secondary progress signals: achievements and a best-streak stat on Profile. FlareHabit is not a streak tracker.
+
+Stages 1 and 2 are free. Later stages require a Premium subscription: €39.99 per year (the default) or €9.99 per month. There is no free trial, because Stages 1 and 2 act as the trial. There is no lifetime plan. There are no ads. Prices are shown in the app and may vary by country.
+
+The app is on Google Play and is Android only for now. It needs Android 7.0 or newer, and it is in English only. An iOS version is planned; no release date is published. A Google account is required to create goals and sync progress.
+
+Older third-party listings and posts may still describe FlareHabit as a habit tracker. This file, the website, and the FAQ are the official description.
+
+Contact: pavel4567@gmail.com
+
+## Pages
+
+- [FlareHabit homepage](https://flarehabit.com/): Product overview, how a goal becomes stages and today's actions, and the Google Play link.
+- [FlareHabit FAQ](https://flarehabit.com/faq): Official answers to what FlareHabit is, whether it is free, how Premium works, how it differs from a habit tracker, and how to manage or delete an account.
+- [FlareHabit on Google Play](https://play.google.com/store/apps/details?id=com.flarehabit.app): Current Android listing.
+
+## Optional
+
+- [Privacy Policy](https://pavelk2254.github.io/flarehabit-docs/Privacy-Policy.html): Data, sign-in, and account deletion.
+- [Terms and Conditions](https://pavelk2254.github.io/flarehabit-docs/Terms-and_conditions.html): Use of the app, Premium, and cancellation.
+- [Delete your FlareHabit account](https://pavelk2254.github.io/flarehabit-docs/delete-account.html): In-app and email deletion steps. Deleting an account does not cancel a Google Play subscription.
